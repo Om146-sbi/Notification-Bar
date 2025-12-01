@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notification Bar with Sections</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="notification-bar" role="alert" aria-live="assertive">
+        <p>
+            <span class="icon" aria-hidden="true">🔔</span>
+            <strong>Notice:</strong> Companies visiting next week - please check your emails for registration details!
+        </p>
+        <button class="close-btn" aria-label="Close Notification">&times;</button>
+    </div>
+
+    <main>
+        <section class="intro-section">
+            <h1>Welcome to College Placement Portal</h1>
+            <p>Stay updated on upcoming company visits and notifications.</p>
+        </section>
+
+        <section class="upcoming-visits-section">
+            <h2>Upcoming Company Visits</h2>
+            <ul>
+                <li><strong>Tech Solutions Inc.</strong> - July 15, 2024 - Auditorium</li>
+                <li><strong>Innovatech Ltd.</strong> - August 2, 2024 - Lecture Hall 3</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const closeBtn = document.querySelector('.close-btn');
+        const notifBar = document.querySelector('.notification-bar');
+
+        closeBtn.addEventListener('click', () => {
+            notifBar.style.transform = 'translateY(-100%)';
+            notifBar.style.opacity = '0';
+            setTimeout(() => notifBar.style.display = 'none', 300);
+        });
+    </script>
+</body>
+</html>
